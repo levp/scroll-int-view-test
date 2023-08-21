@@ -7,10 +7,12 @@ body {
 }
 
 .section {
-	opacity: 1;
 	padding: 20px;
-	transition: opacity 3s ease;
 	margin-top: 500px;
+
+	/* Make the section transition into view. */
+	opacity: 1;
+	transition: opacity 3s ease;
 }
 
 .hidden-section {
