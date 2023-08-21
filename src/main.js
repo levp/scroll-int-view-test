@@ -2,7 +2,7 @@
 
 // Configuration.
 
-const elementSelector = 'section';
+const elementSelectorClass = 'section';
 const elementHiddenClass = 'hidden-section';
 const appearMargin = 80;
 
@@ -10,7 +10,7 @@ const appearMargin = 80;
 
 // Functionality.
 
-const elementSet = new Set(document.querySelectorAll('.' + elementSelector));
+const elementSet = new Set(document.querySelectorAll('.' + elementSelectorClass));
 
 function hideElementsThatAreNotInView() {
 	for (const element of elementSet) {
