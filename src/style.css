@@ -1,0 +1,18 @@
+body {
+	margin: 24px;
+	font-size: 32px;
+	font-family: sans-serif;
+	color: #fff;
+	background-color: #171a1e;
+}
+
+.section {
+	opacity: 1;
+	padding: 20px;
+	transition: opacity 1s ease;
+	margin-top: 500px;
+}
+
+.hidden-section {
+	opacity: 0;
+}
