@@ -1,29 +1,40 @@
-const sectionSet = new Set(document.querySelectorAll('.section'));
+///////////////////////////////////////////////////////////
 
-function hideSectionsThatAreNotInView() {
-	for (const section of sectionSet) {
-		if (!isElementInView(section)) {
-			section.classList.add('hidden-section');
+// Configuration.
+
+const elementSelector = 'section';
+const elementHiddenClass = 'hidden-section';
+const appearMargin = 80;
+
+///////////////////////////////////////////////////////////
+
+// Functionality.
+
+const elementSet = new Set(document.querySelectorAll('.' + elementSelector));
+
+function hideElementsThatAreNotInView() {
+	for (const element of elementSet) {
+		if (!isElementInView(element)) {
+			element.classList.add(elementHiddenClass);
 		}
 	}
 }
 
-function showSectionsThatAreInView() {
-	for (const section of sectionSet) {
-		if (isElementInView(section)) {
-			sectionSet.delete(section);
-			section.classList.remove('hidden-section');
+function showElementThatAreInView() {
+	for (const element of elementSet) {
+		if (isElementInView(element)) {
+			elementSet.delete(element);
+			element.classList.remove(elementHiddenClass);
 		}
 	}
 }
 
 function isElementInView(element) {
-	const appearMargin = 80;
 	const bounds = element.getBoundingClientRect();
 	return bounds.top + appearMargin < window.innerHeight;
 }
 
 // Call once on page load.
-document.addEventListener('DOMContentLoaded', hideSectionsThatAreNotInView);
+document.addEventListener('DOMContentLoaded', hideElementsThatAreNotInView);
 // Call on scroll.
-window.addEventListener('scroll', showSectionsThatAreInView);
+window.addEventListener('scroll', showElementThatAreInView);
