@@ -9,7 +9,7 @@ body {
 .section {
 	opacity: 1;
 	padding: 20px;
-	transition: opacity 1s ease;
+	transition: opacity 3s ease;
 	margin-top: 500px;
 }
 

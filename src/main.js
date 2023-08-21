@@ -18,7 +18,7 @@ function showSectionsThatAreInView() {
 }
 
 function isElementInView(element) {
-	const appearMargin = 60;
+	const appearMargin = 80;
 	const bounds = element.getBoundingClientRect();
 	return bounds.top + appearMargin < window.innerHeight;
 }
